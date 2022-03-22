@@ -1,0 +1,15 @@
+{
+    "name": "masterclass/designpattern",
+    "autoload": {
+        "psr-4": {
+            "Masterclass\\Designpattern\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Hayat Qamar",
+            "email": "hayat.qamar@gmail.com"
+        }
+    ],
+    "require": {}
+}
