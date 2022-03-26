@@ -11,5 +11,8 @@
             "email": "hayat.qamar@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "psr/event-dispatcher": "^1.0",
+        "psr/log": "^3.0"
+    }
 }
