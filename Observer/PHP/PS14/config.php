@@ -4,7 +4,6 @@ namespace Masterclass\Designpattern\Observer\PHP\PS14;
 
 use Masterclass\Designpattern\Observer\PHP\PS14\Event\UserCreateEvent;
 use Masterclass\Designpattern\Observer\PHP\PS14\Event\UserDeleteEvent;
-use Masterclass\Designpattern\Observer\PHP\PS14\EventListener\UserListener;
 
 return [
     UserCreateEvent::EVENT_NAME => [

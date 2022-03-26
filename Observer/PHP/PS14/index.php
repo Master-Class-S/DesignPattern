@@ -1,7 +1,6 @@
 <?php
 
 use Masterclass\Designpattern\Observer\PHP\PS14\EventDispatcher\EventDispatcher;
-use Masterclass\Designpattern\Observer\PHP\PS14\Logger\Logger;
 use Masterclass\Designpattern\Observer\PHP\PS14\UserHandler;
 
 require_once __DIR__ . '/../../../vendor/autoload.php';

@@ -2,9 +2,18 @@
 
 namespace Masterclass\Designpattern\Observer\PHP\SPL;
 
+use Masterclass\Designpattern\Observer\PHP\SPL\Model\User;
+
 class UserCreator implements \SplSubject
 {
     private array $observers = [];
+
+    private User $user;
+
+    public function __construct(array $observers = [])
+    {
+        $this->attachObservers($observers);
+    }
 
     public function attach(\SplObserver $observer)
     {
@@ -25,10 +34,31 @@ class UserCreator implements \SplSubject
         }
     }
 
-    public function create()
+    public function attachObservers(array $observers): void
     {
-        echo 'user created' . PHP_EOL;
+        foreach ($observers as $observer) {
+            $this->attach($observer);
+        }
+    }
+
+    public function create(string $firstname, string $lastname, string $email, string $phone): User
+    {
+        $user = new User();
+        $user->id = uniqid();
+        $user->firstname = $firstname;
+        $user->lastname = $lastname;
+        $user->email = $email;
+        $user->phone = $phone;
+
+        $this->user = $user;
 
         $this->notify();
+
+        return $user;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
     }
 }
