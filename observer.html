@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <button id="toto">Envoyer le mail</button>
+
+    <script>
+        class Subject
+        {
+            observers = [];
+
+            subscribe = function(observer) {
+                this.observers.push(observer);
+            }
+
+            unsubscribe = function (observer) {
+                this.observers = this.observers.filter((o) => o !== observer);
+            }
+
+            fire = function () {
+                console.log('Allumez le feuuuu !! Yeah !!');
+                this.observers.forEach((o) => o());
+            }
+        }
+
+        const mailer = () => console.log('mail sended');
+        const sms = () => console.log('sms sended');
+
+        const s = new Subject();
+
+        s.subscribe(mailer);
+        s.subscribe(sms);
+
+        s.fire();
+
+        document.getElementById('toto').addEventListener('click', mailer)
+    </script>
+</body>
+</html>
